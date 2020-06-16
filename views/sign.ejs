@@ -1,0 +1,40 @@
+<%- include('partials/header1'); %>
+<div class="ui main text container segment" style="margin-top:7em;width: 400px;">
+    <div style="text-align: center;" class="ui header">SIGN UP</div>
+    <form class="ui form" action="/signin" method="POST">
+        <div class="field">
+            <label>Name</label>
+            <input type="text"  placeholder="Name">
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="text" name="blog[email]" placeholder="Email">
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="blog[password]" placeholder="Password" id="pass">
+            <div id="meter_wrapper">
+                <div id="meter"></div>
+               </div>
+               <span id="pass_type"></span>
+        </div>
+        <div class="field">
+            <label>Phone</label>
+            <input type="text" placeholder="Phone Number">
+        </div>
+                
+    <div style="padding-left: 150px;">
+        <input class="ui inverted purple small button" type="submit">
+    </div>
+    <div style="padding-top: 10px;padding-bottom: 30px;" >
+        <button class="ui basic blue small button" style="float: right;" ><a href="/">BACK</a></button>
+    </div>
+</form>
+
+</div>
+<div style="bottom: 30;right: 43%; position: fixed;">
+    <p class="love">Made with <i class="icon red small heart"></i> by Samarth Nehe</p>
+</div>
+
+
+<%- include('partials/footer'); %>

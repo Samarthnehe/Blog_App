@@ -1,0 +1,28 @@
+<%- include('partials/header1'); %>
+<div class="ui main text container segment" style="margin-top:7em;width: 400px;">
+    <div style="text-align: center;" class="ui header">LOGIN</div>
+    <form class="ui form" action="/login" method="POST">
+        <div class="field">
+            <label>Email</label>
+            <input type="text" name="blog[email]" placeholder="Email" required>
+        </div>
+        <div class="field">
+            <label>Password</label>
+            <input type="password" name="blog[password]" placeholder="Password" required>
+        </div>
+                
+    <div style="padding-left: 150px;">
+        <button class="ui inverted blue small button">LOGIN</button>
+    </div>
+    
+</form>
+<div style="padding-top: 20px;" >
+    <h3 class="block">New to Blog App?</h3>
+    <a href="/sign" class="block chain" style="float: right;">Sign Up</a>
+</div>
+</div>
+<div style="bottom: 30;right: 43%; position: fixed;">
+    <p class="love">Made with <i class="icon red small heart"></i> by Samarth Nehe</p>
+</div>
+
+<%- include('partials/footer'); %>

@@ -1,0 +1,36 @@
+i.icon{
+    font-size: 2em;
+}
+.block{
+    display: inline;
+}
+.chain:hover{
+    color: red;
+}
+.dropdown{
+    float: right;
+}
+#meter_wrapper
+{
+ border:0.5px solid rgb(126, 122, 122);
+ margin-left:25%;
+ margin-top:10px;
+ width:150px;
+ height:19px;
+ border-radius:1px;
+}
+#meter
+{
+ width:0px;
+ height:17px;
+ border-radius:
+
+}
+#pass_type
+{
+ font-size:12px;
+ margin-top:10px;
+ margin-left:38%;
+ text-align:center;
+ color:rgb(0, 0, 0);
+}

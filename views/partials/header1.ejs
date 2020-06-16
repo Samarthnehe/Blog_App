@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Blog App</title>
+        <link rel="stylesheet" type=" text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" type=" text/css" href="/stylesheets/app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+             $("#pass").keyup(function(){
+              check_pass();
+             });
+            });
+            
+            function check_pass()
+            {
+             var val=document.getElementById("pass").value;
+             var meter=document.getElementById("meter");
+             var no=0;
+             if(val!="")
+             {
+              if(val.length<=4)no=1;
+              if(val.length>4 && (val.match(/[a-z]/) || val.match(/\d+/) || val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)))no=2;
+            
+                if(val.length>4 && ((val.match(/[a-z]/) && val.match(/\d+/)) || (val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/)) || (val.match(/[a-z]/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))))no=3;
+            
+               if(val.length>4 && val.match(/[a-z]/) && val.match(/\d+/) && val.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))no=4;
+            
+              if(no==1)
+              {
+               $("#meter").animate({width:'50px'},300);
+               meter.style.backgroundColor="red";
+               document.getElementById("pass_type").innerHTML="Very Weak";
+              }
+            
+              if(no==2)
+              {
+               $("#meter").animate({width:'75px'},300);
+               meter.style.backgroundColor="#F5BCA9";
+               document.getElementById("pass_type").innerHTML="Weak";
+              }
+            
+              if(no==3)
+              {
+               $("#meter").animate({width:'110px'},300);
+               meter.style.backgroundColor="#FF8000";
+               document.getElementById("pass_type").innerHTML="Good";
+              }
+            
+              if(no==4)
+              {
+               $("#meter").animate({width:'149px'},300);
+               meter.style.backgroundColor="#00FF40";
+               document.getElementById("pass_type").innerHTML="Strong";
+              }
+             }
+            
+             else
+             {
+              meter.style.backgroundColor="white";
+              document.getElementById("pass_type").innerHTML="";
+             }
+            }
+            </script>
+    </head>
+    <body style="overflow: hidden;">
+        <div class="ui fixed inverted menu">
+        <div class="ui container" >
+                <div class="header item"><i class="film icon"></i>Blog Site</div>
+               
+                <a href="/" class="item right" >Logout</a>
+            </div>
+            
+        </div>
+        
+    
