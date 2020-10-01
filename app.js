@@ -6,7 +6,10 @@ mongoose        =require("mongoose"),
 reload          =require("reload"),
 app             =express();
 
-mongoose.connect("mongodb://localhost:27017/restful_blog_app");
+// mongoose.connect("mongodb://localhost:27017/restful_blog_app_1");
+mongoose.connect("mongodb://localhost/restful_blog_app_1", {useUnifiedTopology: true,useNewUrlParser: true,}).then(() => console.log('DB Connected!')).catch(err => {
+console.log("DB Connection Error: ");
+});
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
