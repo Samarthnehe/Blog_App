@@ -119,17 +119,6 @@ app.get("/blogs/:id/edit",function(req,res){
     })
     
 })
-
-app.put("/blogs/:id",function(req,res){
-    Blog.findByIdAndUpdate(req.params.id,req.body.blog,function(err,UpdatedBlog){
-        if(err){
-            res.redirect("/blogs");
-        }else{
-            res.redirect("/blogs/"+req.params.id);
-        }
-    })
-})
-
 //DELETE
 app.delete("/blogs/:id",function(req,res){
     Blog.findByIdAndDelete(req.params.id,function(err,delBlog){
@@ -140,6 +129,17 @@ app.delete("/blogs/:id",function(req,res){
         }
     })
 })
+app.put("/blogs/:id",function(req,res){
+    Blog.findByIdAndUpdate(req.params.id,req.body.blog,function(err,UpdatedBlog){
+        if(err){
+            res.redirect("/blogs");
+        }else{
+            res.redirect("/blogs/"+req.params.id);
+        }
+    })
+})
+
+
 app.listen(3000,function(){
     console.log("Server is running");
 })
